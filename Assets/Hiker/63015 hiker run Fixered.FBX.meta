@@ -1,0 +1,526 @@
+fileFormatVersion: 2
+guid: 3d2d9076c2bf5164aa7372bf8fede647
+timeCreated: 1435704329
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: '"Follicle"001'
+    100002: '"Follicle"002'
+    100004: '"Follicle"003'
+    100006: '"Follicle"004'
+    100008: '"Follicle"005'
+    100010: '"Follicle"006'
+    100012: '"Follicle"007'
+    100014: '"Follicle"008'
+    100016: '"Follicle"009'
+    100018: '"Follicle"010'
+    100020: '"Follicle"011'
+    100022: '"Follicle"012'
+    100024: '"Follicle"013'
+    100026: '"Follicle"014'
+    100028: '"Follicle"015'
+    100030: '"Follicle"016'
+    100032: '"Follicle"017'
+    100034: '"Follicle"018'
+    100036: '"Follicle"019'
+    100038: '"Follicle"020'
+    100040: '"Follicle"021'
+    100042: '"Follicle"022'
+    100044: '"Follicle"023'
+    100046: '"Follicle"024'
+    100048: '"Follicle"025'
+    100050: '"Follicle"027'
+    100052: '"Follicle"028'
+    100054: '"Follicle"029'
+    100056: '"Follicle"030'
+    100058: //RootNode
+    100060: Bottom
+    100062: BP
+    100064: BP1
+    100066: BP2
+    100068: BP3
+    100070: CATRigHub001
+    100072: CATRigHub002
+    100074: CATRigHub003
+    100076: CATRigLArm1
+    100078: CATRigLArm2
+    100080: CATRigLArmCollarbone
+    100082: CATRigLArmDigit11
+    100084: CATRigLArmDigit12
+    100086: CATRigLArmDigit21
+    100088: CATRigLArmDigit22
+    100090: CATRigLArmDigit31
+    100092: CATRigLArmDigit32
+    100094: CATRigLArmDigit41
+    100096: CATRigLArmDigit42
+    100098: CATRigLArmDigit51
+    100100: CATRigLArmDigit52
+    100102: CATRigLArmPalm
+    100104: CATRigLLeg1
+    100106: CATRigLLeg2
+    100108: CATRigLLegAnkle
+    100110: CATRigLLegPlatform
+    100112: CATRigRArm1
+    100114: CATRigRArm2
+    100116: CATRigRArmCollarbone
+    100118: CATRigRArmDigit11
+    100120: CATRigRArmDigit12
+    100122: CATRigRArmDigit21
+    100124: CATRigRArmDigit22
+    100126: CATRigRArmDigit31
+    100128: CATRigRArmDigit32
+    100130: CATRigRArmDigit41
+    100132: CATRigRArmDigit42
+    100134: CATRigRArmDigit51
+    100136: CATRigRArmDigit52
+    100138: CATRigRArmPalm
+    100140: CATRigRLeg1
+    100142: CATRigRLeg2
+    100144: CATRigRLegAnkle
+    100146: CATRigRLegPlatform
+    100148: CATRigSpine1
+    100150: CATRigSpine1 1
+    100152: CATRigSpine2
+    100154: CATRigSpine2 1
+    100156: Character001
+    100158: FB1
+    100160: FB2
+    100162: FB3
+    100164: FB4
+    100166: FB5
+    100168: FB6
+    100170: Front
+    100172: mesh_lowres
+    100174: Pack_lowres
+    100176: Rest
+    100178: scalp
+    400000: '"Follicle"001'
+    400002: '"Follicle"002'
+    400004: '"Follicle"003'
+    400006: '"Follicle"004'
+    400008: '"Follicle"005'
+    400010: '"Follicle"006'
+    400012: '"Follicle"007'
+    400014: '"Follicle"008'
+    400016: '"Follicle"009'
+    400018: '"Follicle"010'
+    400020: '"Follicle"011'
+    400022: '"Follicle"012'
+    400024: '"Follicle"013'
+    400026: '"Follicle"014'
+    400028: '"Follicle"015'
+    400030: '"Follicle"016'
+    400032: '"Follicle"017'
+    400034: '"Follicle"018'
+    400036: '"Follicle"019'
+    400038: '"Follicle"020'
+    400040: '"Follicle"021'
+    400042: '"Follicle"022'
+    400044: '"Follicle"023'
+    400046: '"Follicle"024'
+    400048: '"Follicle"025'
+    400050: '"Follicle"027'
+    400052: '"Follicle"028'
+    400054: '"Follicle"029'
+    400056: '"Follicle"030'
+    400058: //RootNode
+    400060: Bottom
+    400062: BP
+    400064: BP1
+    400066: BP2
+    400068: BP3
+    400070: CATRigHub001
+    400072: CATRigHub002
+    400074: CATRigHub003
+    400076: CATRigLArm1
+    400078: CATRigLArm2
+    400080: CATRigLArmCollarbone
+    400082: CATRigLArmDigit11
+    400084: CATRigLArmDigit12
+    400086: CATRigLArmDigit21
+    400088: CATRigLArmDigit22
+    400090: CATRigLArmDigit31
+    400092: CATRigLArmDigit32
+    400094: CATRigLArmDigit41
+    400096: CATRigLArmDigit42
+    400098: CATRigLArmDigit51
+    400100: CATRigLArmDigit52
+    400102: CATRigLArmPalm
+    400104: CATRigLLeg1
+    400106: CATRigLLeg2
+    400108: CATRigLLegAnkle
+    400110: CATRigLLegPlatform
+    400112: CATRigRArm1
+    400114: CATRigRArm2
+    400116: CATRigRArmCollarbone
+    400118: CATRigRArmDigit11
+    400120: CATRigRArmDigit12
+    400122: CATRigRArmDigit21
+    400124: CATRigRArmDigit22
+    400126: CATRigRArmDigit31
+    400128: CATRigRArmDigit32
+    400130: CATRigRArmDigit41
+    400132: CATRigRArmDigit42
+    400134: CATRigRArmDigit51
+    400136: CATRigRArmDigit52
+    400138: CATRigRArmPalm
+    400140: CATRigRLeg1
+    400142: CATRigRLeg2
+    400144: CATRigRLegAnkle
+    400146: CATRigRLegPlatform
+    400148: CATRigSpine1
+    400150: CATRigSpine1 1
+    400152: CATRigSpine2
+    400154: CATRigSpine2 1
+    400156: Character001
+    400158: FB1
+    400160: FB2
+    400162: FB3
+    400164: FB4
+    400166: FB5
+    400168: FB6
+    400170: Front
+    400172: mesh_lowres
+    400174: Pack_lowres
+    400176: Rest
+    400178: scalp
+    4300000: mesh_lowres
+    4300002: scalp
+    4300004: '"Follicle"003'
+    4300006: '"Follicle"008'
+    4300008: '"Follicle"012'
+    4300010: '"Follicle"013'
+    4300012: '"Follicle"009'
+    4300014: '"Follicle"014'
+    4300016: '"Follicle"010'
+    4300018: '"Follicle"020'
+    4300020: '"Follicle"001'
+    4300022: '"Follicle"002'
+    4300024: '"Follicle"023'
+    4300026: '"Follicle"022'
+    4300028: '"Follicle"018'
+    4300030: '"Follicle"021'
+    4300032: '"Follicle"015'
+    4300034: '"Follicle"011'
+    4300036: '"Follicle"007'
+    4300038: '"Follicle"016'
+    4300040: '"Follicle"017'
+    4300042: '"Follicle"004'
+    4300044: '"Follicle"005'
+    4300046: '"Follicle"006'
+    4300048: '"Follicle"030'
+    4300050: '"Follicle"025'
+    4300052: '"Follicle"019'
+    4300054: '"Follicle"027'
+    4300056: '"Follicle"024'
+    4300058: '"Follicle"029'
+    4300060: '"Follicle"028'
+    4300062: Pack_lowres
+    7400000: run
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: '"Follicle"001'
+    13700002: '"Follicle"002'
+    13700004: '"Follicle"003'
+    13700006: '"Follicle"004'
+    13700008: '"Follicle"005'
+    13700010: '"Follicle"006'
+    13700012: '"Follicle"007'
+    13700014: '"Follicle"008'
+    13700016: '"Follicle"009'
+    13700018: '"Follicle"010'
+    13700020: '"Follicle"011'
+    13700022: '"Follicle"012'
+    13700024: '"Follicle"013'
+    13700026: '"Follicle"014'
+    13700028: '"Follicle"015'
+    13700030: '"Follicle"016'
+    13700032: '"Follicle"017'
+    13700034: '"Follicle"018'
+    13700036: '"Follicle"019'
+    13700038: '"Follicle"020'
+    13700040: '"Follicle"021'
+    13700042: '"Follicle"022'
+    13700044: '"Follicle"023'
+    13700046: '"Follicle"024'
+    13700048: '"Follicle"025'
+    13700050: '"Follicle"027'
+    13700052: '"Follicle"028'
+    13700054: '"Follicle"029'
+    13700056: '"Follicle"030'
+    13700058: mesh_lowres
+    13700060: Pack_lowres
+    13700062: scalp
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 2
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 3
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: run
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bottom
+        weight: 1
+      - path: Bottom/"Follicle"001
+        weight: 1
+      - path: Bottom/"Follicle"002
+        weight: 1
+      - path: Bottom/"Follicle"011
+        weight: 1
+      - path: Bottom/"Follicle"015
+        weight: 1
+      - path: Bottom/"Follicle"018
+        weight: 1
+      - path: Bottom/"Follicle"021
+        weight: 1
+      - path: Bottom/"Follicle"022
+        weight: 1
+      - path: Bottom/"Follicle"023
+        weight: 1
+      - path: CATRigHub001
+        weight: 1
+      - path: CATRigHub001/CATRigLLeg1
+        weight: 1
+      - path: CATRigHub001/CATRigLLeg1/CATRigLLeg2
+        weight: 1
+      - path: CATRigHub001/CATRigLLeg1/CATRigLLeg2/CATRigLLegAnkle
+        weight: 1
+      - path: CATRigHub001/CATRigRLeg1
+        weight: 1
+      - path: CATRigHub001/CATRigRLeg1/CATRigRLeg2
+        weight: 1
+      - path: CATRigHub001/CATRigRLeg1/CATRigRLeg2/CATRigRLegAnkle
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/BP
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/BP/BP1
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/BP/BP1/BP2
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/BP/BP1/BP2/BP3
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/CATRigLArmCollarbone
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/CATRigLArmCollarbone/CATRigLArm1
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/CATRigLArmCollarbone/CATRigLArm1/CATRigLArm2
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/CATRigLArmCollarbone/CATRigLArm1/CATRigLArm2/CATRigLArmPalm
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/CATRigLArmCollarbone/CATRigLArm1/CATRigLArm2/CATRigLArmPalm/CATRigLArmDigit11
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/CATRigLArmCollarbone/CATRigLArm1/CATRigLArm2/CATRigLArmPalm/CATRigLArmDigit11/CATRigLArmDigit12
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/CATRigLArmCollarbone/CATRigLArm1/CATRigLArm2/CATRigLArmPalm/CATRigLArmDigit21
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/CATRigLArmCollarbone/CATRigLArm1/CATRigLArm2/CATRigLArmPalm/CATRigLArmDigit21/CATRigLArmDigit22
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/CATRigLArmCollarbone/CATRigLArm1/CATRigLArm2/CATRigLArmPalm/CATRigLArmDigit31
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/CATRigLArmCollarbone/CATRigLArm1/CATRigLArm2/CATRigLArmPalm/CATRigLArmDigit31/CATRigLArmDigit32
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/CATRigLArmCollarbone/CATRigLArm1/CATRigLArm2/CATRigLArmPalm/CATRigLArmDigit41
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/CATRigLArmCollarbone/CATRigLArm1/CATRigLArm2/CATRigLArmPalm/CATRigLArmDigit41/CATRigLArmDigit42
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/CATRigLArmCollarbone/CATRigLArm1/CATRigLArm2/CATRigLArmPalm/CATRigLArmDigit51
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/CATRigLArmCollarbone/CATRigLArm1/CATRigLArm2/CATRigLArmPalm/CATRigLArmDigit51/CATRigLArmDigit52
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/CATRigRArmCollarbone
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/CATRigRArmCollarbone/CATRigRArm1
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/CATRigRArmCollarbone/CATRigRArm1/CATRigRArm2
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/CATRigRArmCollarbone/CATRigRArm1/CATRigRArm2/CATRigRArmPalm
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/CATRigRArmCollarbone/CATRigRArm1/CATRigRArm2/CATRigRArmPalm/CATRigRArmDigit11
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/CATRigRArmCollarbone/CATRigRArm1/CATRigRArm2/CATRigRArmPalm/CATRigRArmDigit11/CATRigRArmDigit12
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/CATRigRArmCollarbone/CATRigRArm1/CATRigRArm2/CATRigRArmPalm/CATRigRArmDigit21
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/CATRigRArmCollarbone/CATRigRArm1/CATRigRArm2/CATRigRArmPalm/CATRigRArmDigit21/CATRigRArmDigit22
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/CATRigRArmCollarbone/CATRigRArm1/CATRigRArm2/CATRigRArmPalm/CATRigRArmDigit31
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/CATRigRArmCollarbone/CATRigRArm1/CATRigRArm2/CATRigRArmPalm/CATRigRArmDigit31/CATRigRArmDigit32
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/CATRigRArmCollarbone/CATRigRArm1/CATRigRArm2/CATRigRArmPalm/CATRigRArmDigit41
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/CATRigRArmCollarbone/CATRigRArm1/CATRigRArm2/CATRigRArmPalm/CATRigRArmDigit41/CATRigRArmDigit42
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/CATRigRArmCollarbone/CATRigRArm1/CATRigRArm2/CATRigRArmPalm/CATRigRArmDigit51
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/CATRigRArmCollarbone/CATRigRArm1/CATRigRArm2/CATRigRArmPalm/CATRigRArmDigit51/CATRigRArmDigit52
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/CATRigSpine1 1
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/CATRigSpine1 1/CATRigSpine2
+          1
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/CATRigSpine1 1/CATRigSpine2
+          1/CATRigHub003
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/CATRigSpine1 1/CATRigSpine2
+          1/CATRigHub003/FB1
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/CATRigSpine1 1/CATRigSpine2
+          1/CATRigHub003/FB2
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/CATRigSpine1 1/CATRigSpine2
+          1/CATRigHub003/FB3
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/CATRigSpine1 1/CATRigSpine2
+          1/CATRigHub003/FB4
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/CATRigSpine1 1/CATRigSpine2
+          1/CATRigHub003/FB5
+        weight: 1
+      - path: CATRigHub001/CATRigSpine1/CATRigSpine2/CATRigHub002/CATRigSpine1 1/CATRigSpine2
+          1/CATRigHub003/FB6
+        weight: 1
+      - path: CATRigLLegPlatform
+        weight: 1
+      - path: CATRigRLegPlatform
+        weight: 1
+      - path: Character001
+        weight: 1
+      - path: Front
+        weight: 1
+      - path: Front/"Follicle"003
+        weight: 1
+      - path: Front/"Follicle"008
+        weight: 1
+      - path: Front/"Follicle"009
+        weight: 1
+      - path: Front/"Follicle"010
+        weight: 1
+      - path: Front/"Follicle"012
+        weight: 1
+      - path: Front/"Follicle"013
+        weight: 1
+      - path: Front/"Follicle"014
+        weight: 1
+      - path: Front/"Follicle"020
+        weight: 1
+      - path: mesh_lowres
+        weight: 1
+      - path: Pack_lowres
+        weight: 1
+      - path: Rest
+        weight: 1
+      - path: Rest/"Follicle"004
+        weight: 1
+      - path: Rest/"Follicle"005
+        weight: 1
+      - path: Rest/"Follicle"006
+        weight: 1
+      - path: Rest/"Follicle"007
+        weight: 1
+      - path: Rest/"Follicle"016
+        weight: 1
+      - path: Rest/"Follicle"017
+        weight: 1
+      - path: Rest/"Follicle"019
+        weight: 1
+      - path: Rest/"Follicle"024
+        weight: 1
+      - path: Rest/"Follicle"025
+        weight: 1
+      - path: Rest/"Follicle"027
+        weight: 1
+      - path: Rest/"Follicle"028
+        weight: 1
+      - path: Rest/"Follicle"029
+        weight: 1
+      - path: Rest/"Follicle"030
+        weight: 1
+      - path: scalp
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
