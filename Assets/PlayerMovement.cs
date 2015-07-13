@@ -7,15 +7,19 @@ public class PlayerMovement : MonoBehaviour
 
     public float gravity;
     public float jumpSpeed;
-    public float moveStrength;
+    public float moveSpeed;
     public float friction;
 
-    public bool onGround = false;
+    public float maxMoveSpeed;
+
+    private bool onGround = false;
 
     private Vector3 velocity = new Vector3();
     private bool disableLeft = false;
     private bool disableRight = false;
     private bool isRight = true;
+
+    private bool gravReset = false;
 
     // Update
 	void FixedUpdate()
@@ -26,9 +30,17 @@ public class PlayerMovement : MonoBehaviour
         {
             // Push gravity
             velocity.y -= gravity;
+            gravReset = false;
         }
         else
         {
+            if (!gravReset)
+            {
+                // Reset gravity
+                velocity.y = -gravity;
+                gravReset = true;
+            }
+
             // Jump
             if (Input.GetButton("Jump"))
             {
@@ -37,7 +49,11 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Add input movement
-        velocity.x += Input.GetAxisRaw("Horizontal") * moveStrength;
+        velocity.x += Input.GetAxisRaw("Horizontal") * moveSpeed;
+
+        // Limit movement
+        if (velocity.x < -maxMoveSpeed) velocity.x = -maxMoveSpeed;
+        if (velocity.x > maxMoveSpeed) velocity.x = maxMoveSpeed;
 
         if (c.isGrounded)
         {
