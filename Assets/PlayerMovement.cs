@@ -12,14 +12,10 @@ public class PlayerMovement : MonoBehaviour
 
     public float maxMoveSpeed;
 
-    private bool onGround = false;
-
     private Vector3 velocity = new Vector3();
     private bool disableLeft = false;
     private bool disableRight = false;
     private bool isRight = true;
-
-    private bool gravReset = false;
 
     // Update
 	void FixedUpdate()
@@ -30,16 +26,11 @@ public class PlayerMovement : MonoBehaviour
         {
             // Push gravity
             velocity.y -= gravity;
-            gravReset = false;
         }
         else
         {
-            if (!gravReset)
-            {
-                // Reset gravity
-                velocity.y = -gravity;
-                gravReset = true;
-            }
+            // Reset gravity
+            velocity.y = -gravity;
 
             // Jump
             if (Input.GetButton("Jump"))
@@ -93,23 +84,12 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Apply velocity
-        //GetComponent<Rigidbody>().velocity = velocity;
-        GetComponent<CharacterController>().Move(velocity * Time.deltaTime);
+        c.Move(velocity * Time.deltaTime);
 
         // Reset variables
-        onGround = false;
         disableLeft = false;
         disableRight = false;
 	}
-
-    // Check if on ground
-    void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.tag == "Ground")
-        {
-            onGround = true;
-        }
-    }
 
     // Messages
     void HitSide() { velocity.x = 0; }
