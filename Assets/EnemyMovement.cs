@@ -15,6 +15,8 @@ public class EnemyMovement : MonoBehaviour
     public float chargeSpeed;
     public float maxChargeSpeed;
 
+    // TEST
+    public float damage = 1;
 
     // Movement Inputs //
     public bool moveLeft;

@@ -89,4 +89,10 @@ public class EnemyBearAI : MonoBehaviour
             input.moveRight = true;
         }
     }
+
+    // Player got hit
+    void OnEnemyTouched(Collider other)
+    {
+        other.SendMessage("GotHit", /*GetComponent<EnemyMovement>().damage,*/ transform.position.x);
+    }
 }

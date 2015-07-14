@@ -7,8 +7,10 @@ public class EventTrigger : MonoBehaviour
     public bool sendUpwards;
     public bool onEnterOnly;
 
-    public MonoBehaviour triggerScript;
     public string targetTag;
+
+    public MonoBehaviour triggerScript;
+    public string triggerMessage = "OnEventTrigger";
 
     // When trigger is activated (for onEnterOnly == true)
     void OnTriggerEnter(Collider other)
@@ -21,17 +23,17 @@ public class EventTrigger : MonoBehaviour
             if (allowLogging)
             {
                 Debug.Log("Trigger fired on gameobject \"" + gameObject.name + "\"\n" +
-                    "\t::Fired function \"OnEventTrigger\"::");
+                    "\t::Fired function \"" + triggerMessage + "\"::");
             }
 
             // Send trigger message
             if (sendUpwards)
             {
-                triggerScript.SendMessageUpwards("OnEventTrigger", other);
+                triggerScript.SendMessageUpwards(triggerMessage, other);
             }
             else
             {
-                triggerScript.SendMessage("OnEventTrigger", other);
+                triggerScript.SendMessage(triggerMessage, other);
             }
         }
     }
@@ -47,17 +49,17 @@ public class EventTrigger : MonoBehaviour
             if (allowLogging)
             {
                 Debug.Log("Trigger fired on gameobject \"" + gameObject.name + "\"\n" +
-                    "\t::Fired function \"OnEventTrigger\"::");
+                    "\t::Fired function \"" + triggerMessage + "\"::");
             }
 
             // Send trigger message
             if (sendUpwards)
             {
-                triggerScript.SendMessageUpwards("OnEventTrigger", other);
+                triggerScript.SendMessageUpwards(triggerMessage, other);
             }
             else
             {
-                triggerScript.SendMessage("OnEventTrigger", other);
+                triggerScript.SendMessage(triggerMessage, other);
             }
         }
     }

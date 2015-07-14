@@ -12,10 +12,55 @@ public class PlayerMovement : MonoBehaviour
 
     public float maxMoveSpeed;
 
-    /*private*/ public Vector3 velocity = new Vector3();
+    public float knockbackStrength;
+    private bool tempDisableMaxSpeed = false;
+
+    public GameObject hurtColliders;
+    public bool hurtInvincible = false;
+    public float hurtTime;
+    private float hurtTimeWaited = 0;
+    
+    private Vector3 velocity = new Vector3();
     private bool disableLeft = false;
     private bool disableRight = false;
     private bool isRight = true;
+
+    // Shift colliders out of way when invincible
+    void Update()
+    {
+        if (hurtInvincible)
+        {
+            // Shift colliders out of way
+            Vector3 originalPosition = hurtColliders.transform.position;
+            hurtColliders.transform.position = new Vector3(originalPosition.x, originalPosition.y, 4.5f);
+                        
+            originalPosition = GetComponent<CharacterController>().center;
+            GetComponent<CharacterController>().center = new Vector3(originalPosition.x, originalPosition.y, 4.5f);
+
+            originalPosition = GetComponent<BoxCollider>().center;
+            GetComponent<BoxCollider>().center = new Vector3(originalPosition.x, originalPosition.y, 4.5f);
+
+            // Count down timer
+            hurtTimeWaited -= Time.deltaTime;
+            if (hurtTimeWaited <= 0)
+            {
+                // Player is no longer invincible
+                hurtInvincible = false;
+            }
+        }
+        else
+        {
+            // Shift back
+            Vector3 originalPosition = hurtColliders.transform.position;
+            hurtColliders.transform.position = new Vector3(originalPosition.x, originalPosition.y, 0);
+
+            originalPosition = GetComponent<CharacterController>().center;
+            GetComponent<CharacterController>().center = new Vector3(originalPosition.x, originalPosition.y, 0);
+
+            originalPosition = GetComponent<BoxCollider>().center;
+            GetComponent<BoxCollider>().center = new Vector3(originalPosition.x, originalPosition.y, 0);
+        }
+    }
 
     // Update
 	void FixedUpdate()
@@ -42,9 +87,19 @@ public class PlayerMovement : MonoBehaviour
         // Add input movement
         velocity.x += Input.GetAxisRaw("Horizontal") * moveSpeed;
 
-        // Limit movement
-        if (velocity.x < -maxMoveSpeed) velocity.x = -maxMoveSpeed;
-        if (velocity.x > maxMoveSpeed) velocity.x = maxMoveSpeed;
+        if (!tempDisableMaxSpeed)
+        {
+            // Limit movement
+            if (velocity.x < -maxMoveSpeed) velocity.x = -maxMoveSpeed;
+            if (velocity.x > maxMoveSpeed) velocity.x = maxMoveSpeed;
+        }
+        else
+        {
+            // Reset when within bounds
+            if (velocity.x >= -maxMoveSpeed
+                && velocity.x <= maxMoveSpeed)
+                tempDisableMaxSpeed = false;
+        }
 
         if (c.isGrounded)
         {
@@ -96,4 +151,30 @@ public class PlayerMovement : MonoBehaviour
     void HitTop() { velocity.y = 0; }
     void DisableLeft() { disableLeft = true; }
     void DisableRight() { disableRight = true; }
+
+    // Got hit
+    void GotHit(/*float damage, */float xPos)
+    {
+        tempDisableMaxSpeed = true;
+
+        if (xPos < transform.position.x)
+        {
+            // Jump right
+            velocity.x = knockbackStrength;
+            velocity.y = knockbackStrength;
+        }
+        else
+        {
+            // Jump left
+            velocity.x = -knockbackStrength;
+            velocity.y = knockbackStrength;
+        }
+
+        // Apply velocity
+        GetComponent<CharacterController>().Move(velocity * Time.deltaTime);
+
+        // Set player invincible for small amount of time
+        hurtInvincible = true;
+        hurtTimeWaited = hurtTime;
+    }
 }
