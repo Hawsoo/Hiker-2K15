@@ -1,0 +1,6 @@
+====Player Jump Height====
+Gravity                -> 3.5
+Jump Speed             -> 50
+Maximum Height of Jump -> 7.65*
+
+*Though Unity uses the 'delta time' system, this calculation is run upon a consistent framerate thread, separate from the 'delta time'

@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float maxMoveSpeed;
 
-    private Vector3 velocity = new Vector3();
+    /*private*/ public Vector3 velocity = new Vector3();
     private bool disableLeft = false;
     private bool disableRight = false;
     private bool isRight = true;

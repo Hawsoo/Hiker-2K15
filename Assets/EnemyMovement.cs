@@ -9,10 +9,17 @@ public class EnemyMovement : MonoBehaviour
 
     public float maxMoveSpeed;
 
-    // BETA Inputs //
+    // Charging series
+    public bool isCharging = false;
+
+    public float chargeSpeed;
+    public float maxChargeSpeed;
+
+
+    // Movement Inputs //
     public bool moveLeft;
     public bool moveRight;
-    //-BETA Inputs-//
+    /////////////////////
 
     private Vector3 velocity = new Vector3();
 	
@@ -35,14 +42,20 @@ public class EnemyMovement : MonoBehaviour
         // Input Movement
         if (moveLeft)
         {
-            velocity.x -= moveSpeed;
+            if (isCharging)
+                velocity.x -= chargeSpeed;
+            else
+                velocity.x -= moveSpeed;
         }
         else if (moveRight)
         {
-            velocity.x += moveSpeed;
+            if (isCharging)
+                velocity.x += chargeSpeed;
+            else
+                velocity.x += moveSpeed;
         }
-        // If no input
-        else
+        // If no input (and grounded)
+        else if (c.isGrounded)
         {
             // Apply Friction
             if (velocity.x < 0)
@@ -58,8 +71,16 @@ public class EnemyMovement : MonoBehaviour
         }
 
         // Limit movement
-        if (velocity.x < -maxMoveSpeed) velocity.x = -maxMoveSpeed;
-        if (velocity.x > maxMoveSpeed) velocity.x = maxMoveSpeed;
+        if (isCharging)
+        {
+            if (velocity.x < -maxChargeSpeed) velocity.x = -maxChargeSpeed;
+            if (velocity.x > maxChargeSpeed) velocity.x = maxChargeSpeed;
+        }
+        else
+        {
+            if (velocity.x < -maxMoveSpeed) velocity.x = -maxMoveSpeed;
+            if (velocity.x > maxMoveSpeed) velocity.x = maxMoveSpeed;
+        }
 
         // Apply
         c.Move(velocity * Time.deltaTime);

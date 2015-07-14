@@ -12,7 +12,8 @@ public class PlayerCollisionDetect : MonoBehaviour
     // If there is collision
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag != "Player")
+        if (other.gameObject.tag != "Player"
+            && other.gameObject.tag != "Event Trigger")
         {
             // Send Message(s)
             if (sideField) SendMessageUpwards("HitSide");
@@ -23,7 +24,8 @@ public class PlayerCollisionDetect : MonoBehaviour
     // If collision stays
     void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag != "Player")
+        if (other.gameObject.tag != "Player"
+            && other.gameObject.tag != "Event Trigger")
         {
             // Send Message(s)
             if (disableLeft) SendMessageUpwards("DisableLeft");
