@@ -101,23 +101,6 @@ public class PlayerMovement : MonoBehaviour
                 tempDisableMaxSpeed = false;
         }
 
-        if (c.isGrounded)
-        {
-            // Change direction
-            if (isRight && velocity.x < 0)
-            {
-                // Turn left
-                isRight = false;
-                cameraAnimHandler.SetCamDirection(isRight);
-            }
-            else if (!isRight && velocity.x > 0)
-            {
-                // Turn left
-                isRight = true;
-                cameraAnimHandler.SetCamDirection(isRight);
-            }
-        }
-
         // Disable if needed
         if (disableLeft) { velocity.x = Mathf.Max(0, velocity.x); }
         if (disableRight) { velocity.x = Mathf.Min(0, velocity.x); }
