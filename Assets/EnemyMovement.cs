@@ -87,4 +87,10 @@ public class EnemyMovement : MonoBehaviour
         // Apply
         c.Move(velocity * Time.deltaTime);
 	}
+
+    // Sets horizontal velocity
+    public void SetHspeed(float hsp)
+    {
+        velocity.x = hsp;
+    }
 }

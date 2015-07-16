@@ -84,6 +84,8 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        Debug.Log(Input.GetAxisRaw("Horizontal"));
+
         // Add input movement
         velocity.x += Input.GetAxisRaw("Horizontal") * moveSpeed;
 
