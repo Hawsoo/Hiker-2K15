@@ -1,31 +1,51 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyBearAI : MonoBehaviour
+public class EnemyBearChaserAI : MonoBehaviour
 {
     /*
      * Actions for bears:
      * -Walking/stopping
      * -Charging
      */
-    public bool sitWhenInactive;
-
-    public float moveTime;
-    private float moveTimeWaited = -1;
+    /*public float moveTime;
+    private float moveTimeWaited = -1;*/
 
     private EnemyMovement input;
+    private GameObject chargeObj;
 
 	// Init
 	void Awake()
     {
         input = GetComponent<EnemyMovement>();
 	}
+
+    // Update
+    void Update()
+    {
+        if (chargeObj != null && input.isCharging)
+        {
+            // Charge forever
+            input.moveLeft = input.moveRight = false;
+
+            if (chargeObj.transform.position.x < transform.position.x)
+            {
+                // Move left
+                input.moveLeft = true;
+            }
+            else
+            {
+                // Move right
+                input.moveRight = true;
+            }
+        }
+    }
 	
 	// Update
-	void Update()
+	/*void Update()
     {
         if (moveTimeWaited >= moveTime
-            || moveTimeWaited == -1 /* First time case */)
+            || moveTimeWaited == -1 /* First time case *//*)
         {
             // Change actions
             ChooseNewAction();
@@ -44,55 +64,40 @@ public class EnemyBearAI : MonoBehaviour
         input.moveLeft = input.moveRight = input.isCharging = false;
         moveTimeWaited = 0;
 
-        if (!sitWhenInactive)
+        // Choose (3 cases)
+        int randcase = Random.Range(1, 4);
+
+        switch (randcase)
         {
-            // Choose (3 cases)
-            int randcase = Random.Range(1, 4);
+            case 1:
+                // Move left
+                input.moveLeft = true;
+                break;
+            
+            case 2:
+                // Move right
+                input.moveRight = true;
+                break;
 
-            switch (randcase)
-            {
-                case 1:
-                    // Move left
-                    input.moveLeft = true;
-                    break;
+            case 3:
+                // Don't move at all
+                break;
 
-                case 2:
-                    // Move right
-                    input.moveRight = true;
-                    break;
-
-                case 3:
-                    // Don't move at all
-                    break;
-
-                default:
-                    Debug.Log("ERROR IN CODE");
-                    break;
-            }
+            default:
+                Debug.Log("ERROR IN CODE");
+                break;
         }
-    }
+    }*/
 
-    // Attack
+    // Start charging
     void OnAttackTrigger(Collider other)
     {
-        // Limited reset
-        input.moveLeft = input.moveRight = false;
-        moveTimeWaited = 0;
+        chargeObj = other.gameObject;
 
         // Player triggered event;
-        // attack immediately
+        // keep charging on player
+        input.moveLeft = input.moveRight = false;
         input.isCharging = true;
-
-        if (other.transform.position.x < transform.position.x)
-        {
-            // Move left
-            input.moveLeft = true;
-        }
-        else
-        {
-            // Move right
-            input.moveRight = true;
-        }
     }
 
     // Player got hit
@@ -116,8 +121,8 @@ public class EnemyBearAI : MonoBehaviour
         else*/
         {
             // Change directions
-            input.isCharging = false;
-            moveTimeWaited = 0;
+            /*input.isCharging = false;
+            moveTimeWaited = 0;*/
 
             // Move right
             input.moveLeft = false;
@@ -140,8 +145,8 @@ public class EnemyBearAI : MonoBehaviour
         else*/
         {
             // Change directions
-            input.isCharging = false;
-            moveTimeWaited = 0;
+            /*input.isCharging = false;
+            moveTimeWaited = 0;*/
 
             // Move left
             input.moveLeft = true;
