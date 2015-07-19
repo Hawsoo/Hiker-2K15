@@ -3,21 +3,25 @@ using System.Collections;
 
 public class EnemyBearChaserAI : MonoBehaviour
 {
-    /*
-     * Actions for bears:
-     * -Walking/stopping
-     * -Charging
-     */
-    /*public float moveTime;
-    private float moveTimeWaited = -1;*/
+    public bool startCharged;
 
-    private EnemyMovement input;
+    [SerializeField]
     private GameObject chargeObj;
+    private EnemyMovement input;
+
+    // TEST -- for analytics
+    public float index;
 
 	// Init
 	void Awake()
     {
         input = GetComponent<EnemyMovement>();
+
+        if (startCharged)
+        {
+            input.moveLeft = input.moveRight = false;
+            input.isCharging = true;
+        }
 	}
 
     // Update
@@ -40,54 +44,6 @@ public class EnemyBearChaserAI : MonoBehaviour
             }
         }
     }
-	
-	// Update
-	/*void Update()
-    {
-        if (moveTimeWaited >= moveTime
-            || moveTimeWaited == -1 /* First time case *//*)
-        {
-            // Change actions
-            ChooseNewAction();
-        }
-        else
-        {
-            // Count up
-            moveTimeWaited += Time.deltaTime;
-        }
-	}
-
-    // Changes the action
-    private void ChooseNewAction()
-    {
-        // Reset
-        input.moveLeft = input.moveRight = input.isCharging = false;
-        moveTimeWaited = 0;
-
-        // Choose (3 cases)
-        int randcase = Random.Range(1, 4);
-
-        switch (randcase)
-        {
-            case 1:
-                // Move left
-                input.moveLeft = true;
-                break;
-            
-            case 2:
-                // Move right
-                input.moveRight = true;
-                break;
-
-            case 3:
-                // Don't move at all
-                break;
-
-            default:
-                Debug.Log("ERROR IN CODE");
-                break;
-        }
-    }*/
 
     // Start charging
     void OnAttackTrigger(Collider other)
@@ -103,8 +59,10 @@ public class EnemyBearChaserAI : MonoBehaviour
     // Player got hit
     void OnEnemyTouched(Collider other)
     {
-        other.SendMessage("GotHit", /*GetComponent<EnemyMovement>().damage,*/ transform.position.x);
+        other.SendMessage("GotHit", /*GetComponent<EnemyMovement>().damage,*/ new float[] { index, transform.position.x });
     }
+
+    #region Wall Collisions
 
     // Touched wall at left: go right
     void OnWallTouchedL(Collider other)
@@ -153,4 +111,6 @@ public class EnemyBearChaserAI : MonoBehaviour
             input.moveRight = false;
         }
     }
+
+    #endregion
 }

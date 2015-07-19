@@ -15,6 +15,9 @@ public class EnemyBearAI : MonoBehaviour
 
     private EnemyMovement input;
 
+    // TEST -- for analytics
+    public float index;
+
 	// Init
 	void Awake()
     {
@@ -98,7 +101,7 @@ public class EnemyBearAI : MonoBehaviour
     // Player got hit
     void OnEnemyTouched(Collider other)
     {
-        other.SendMessage("GotHit", /*GetComponent<EnemyMovement>().damage,*/ transform.position.x);
+        other.SendMessage("GotHit", /*GetComponent<EnemyMovement>().damage,*/ new float[] {index, transform.position.x});
     }
 
     // Touched wall at left: go right

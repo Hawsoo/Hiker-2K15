@@ -28,6 +28,9 @@ public class EnemyMovement : MonoBehaviour
 	// Update
 	void FixedUpdate()
     {
+        // Checkout if not seen
+        if (!GetComponent<Renderer>().isVisible) return;
+
         CharacterController c = GetComponent<CharacterController>();
 
         if (!c.isGrounded)

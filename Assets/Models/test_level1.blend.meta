@@ -6,10 +6,35 @@ ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Collision_Map
+    100004: Death_Triggers
+    100006: Death_Trigger
+    100008: Death_Trigger_001
+    100010: Death_Trigger_002
     400000: //RootNode
+    400002: Collision_Map
+    400004: Death_Triggers
+    400006: Death_Trigger
+    400008: Death_Trigger_001
+    400010: Death_Trigger_002
     2300000: //RootNode
+    2300002: Collision_Map
+    2300004: Death_Triggers
+    2300006: Death_Trigger
+    2300008: Death_Trigger_001
+    2300010: Death_Trigger_002
     3300000: //RootNode
+    3300002: Collision_Map
+    3300004: Death_Triggers
+    3300006: Death_Trigger
+    3300008: Death_Trigger_001
+    3300010: Death_Trigger_002
     4300000: Cube
+    4300002: Death_Triggers
+    4300004: Collision_Map
+    4300006: Death_Trigger_002
+    4300008: Death_Trigger_001
+    4300010: Death_Trigger
     7400000: Default Take
     9500000: //RootNode
   materials:

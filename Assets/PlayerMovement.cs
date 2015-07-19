@@ -3,7 +3,8 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public CameraAnimHandler cameraAnimHandler;
+    //public CameraAnimHandler cameraAnimHandler;
+    public new GameObject camera;
 
     public float gravity;
     public float jumpSpeed;
@@ -19,11 +20,33 @@ public class PlayerMovement : MonoBehaviour
     public bool hurtInvincible = false;
     public float hurtTime;
     private float hurtTimeWaited = 0;
+
+    // Movement Inputs //
+    public bool moveLeft;
+    public bool moveRight;
+    public bool jump;
+    /////////////////////
     
+    [SerializeField]
     private Vector3 velocity = new Vector3();
     private bool disableLeft = false;
     private bool disableRight = false;
-    private bool isRight = true;
+    //private bool isRight = true;
+
+    // TEST -- Testing analytics
+    private int anal_deaths = 0;
+    private int anal_jumps = 0;
+    private int anal_bear1hits = 0;
+    private int anal_bear2hits = 0;
+    private int anal_bear3hits = 0;
+    private int anal_bear4hits = 0;
+
+    // TEST -- Respawn coordinates
+    void Awake()
+    {
+        if (camera != null)
+            camera.transform.position = transform.position;
+    }
 
     // Shift colliders out of way when invincible
     void Update()
@@ -78,16 +101,18 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = -gravity;
 
             // Jump
-            if (Input.GetButton("Jump"))
+            if (jump)
             {
                 velocity.y = jumpSpeed;
+                anal_jumps++;
             }
         }
 
-        Debug.Log(Input.GetAxisRaw("Horizontal"));
-
         // Add input movement
-        velocity.x += Input.GetAxisRaw("Horizontal") * moveSpeed;
+        if (moveLeft)
+            velocity.x -= moveSpeed;
+        if (moveRight)
+            velocity.x += moveSpeed;
 
         if (!tempDisableMaxSpeed)
         {
@@ -108,7 +133,7 @@ public class PlayerMovement : MonoBehaviour
         if (disableRight) { velocity.x = Mathf.Min(0, velocity.x); }
 
         // If no input
-        if (Input.GetAxisRaw("Horizontal") == 0)
+        if (!moveLeft && !moveRight)
         {
             // Apply Friction
             if (velocity.x < 0)
@@ -131,18 +156,24 @@ public class PlayerMovement : MonoBehaviour
         disableRight = false;
 	}
 
+    // Resets the velocity
+    public void ResetVelocity()
+    {
+        velocity = Vector3.zero;
+    }
+
     // Messages
     void HitSide() { velocity.x = 0; }
     void HitTop() { velocity.y = 0; }
     void DisableLeft() { disableLeft = true; }
     void DisableRight() { disableRight = true; }
 
-    // Got hit
-    void GotHit(/*float damage, */float xPos)
+    // Got hit          // ind0->bearindex, ind1->xPos
+    void GotHit(/*float damage, */float[] xPos)
     {
         tempDisableMaxSpeed = true;
 
-        if (xPos < transform.position.x)
+        if (xPos[1] < transform.position.x)
         {
             // Jump right
             velocity.x = knockbackStrength;
@@ -161,5 +192,46 @@ public class PlayerMovement : MonoBehaviour
         // Set player invincible for small amount of time
         hurtInvincible = true;
         hurtTimeWaited = hurtTime;
+
+        // TEST -- apply analytics
+        if (xPos[0] == 1)
+        {
+            anal_bear1hits++;
+        }
+        else if (xPos[0] == 2)
+        {
+            anal_bear2hits++;
+        }
+        else if (xPos[0] == 3)
+        {
+            anal_bear3hits++;
+        }
+        else if (xPos[0] == 4)
+        {
+            anal_bear4hits++;
+        }
+    }
+
+    // If out of bounds
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Death Trigger")
+        {
+            // TEST -- For analytics
+            anal_deaths++;
+
+            // Respawn
+            EntryPointControl.ChangeScenes("Test_scene");
+        }
+    }
+
+    // TEST -- spits out analytics
+    void SpitOutAnalytics()
+    {
+        // Write to file
+        System.IO.File.WriteAllText(Application.dataPath + "\\..\\anal.txt", "d=" + anal_deaths + ";\nj=" + anal_jumps + ";\nb1=" + anal_bear1hits + ";\nb2=" + anal_bear2hits + ";\nb3=" + anal_bear3hits + ";\nb4=" + anal_bear4hits);
+        
+        // Quit app
+        Application.Quit();
     }
 }

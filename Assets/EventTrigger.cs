@@ -4,8 +4,9 @@ using System.Collections;
 public class EventTrigger : MonoBehaviour
 {
     public bool allowLogging = true;
-    public bool sendUpwards;
+    //public bool sendUpwards;
     public bool onEnterOnly;
+    public bool destroyWhenActivated;
 
     public string targetTag;
 
@@ -27,14 +28,17 @@ public class EventTrigger : MonoBehaviour
             }
 
             // Send trigger message
-            if (sendUpwards)
+            /*if (sendUpwards)
             {
                 triggerScript.SendMessageUpwards(triggerMessage, other);
             }
-            else
+            else*/
             {
                 triggerScript.SendMessage(triggerMessage, other);
             }
+
+            // Destroy if wanted
+            if (destroyWhenActivated) GameObject.Destroy(gameObject);
         }
     }
 
@@ -53,14 +57,17 @@ public class EventTrigger : MonoBehaviour
             }
 
             // Send trigger message
-            if (sendUpwards)
+            /*if (sendUpwards)
             {
                 triggerScript.SendMessageUpwards(triggerMessage, other);
             }
-            else
+            else*/
             {
                 triggerScript.SendMessage(triggerMessage, other);
             }
+
+            // Destroy if wanted
+            if (destroyWhenActivated) GameObject.Destroy(gameObject);
         }
     }
 }
