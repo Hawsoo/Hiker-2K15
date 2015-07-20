@@ -221,7 +221,7 @@ public class PlayerMovement : MonoBehaviour
             anal_deaths++;
 
             // Respawn
-            EntryPointControl.ChangeScenes("Test_scene");
+            EntryPointControl.ChangeScenes(Application.loadedLevelName);
         }
     }
 

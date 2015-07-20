@@ -3,6 +3,8 @@ using System.Collections;
 
 public class EnemyMovement : MonoBehaviour
 {
+    public bool mustMoveAtAllTimes = false;
+
     public float gravity;
     public float moveSpeed;
     public float friction;
@@ -29,7 +31,7 @@ public class EnemyMovement : MonoBehaviour
 	void FixedUpdate()
     {
         // Checkout if not seen
-        if (!GetComponent<Renderer>().isVisible) return;
+        if (!GetComponent<Renderer>().isVisible && !mustMoveAtAllTimes) return;
 
         CharacterController c = GetComponent<CharacterController>();
 
