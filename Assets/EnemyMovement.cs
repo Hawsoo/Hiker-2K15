@@ -25,8 +25,21 @@ public class EnemyMovement : MonoBehaviour
     public bool moveRight;
     /////////////////////
 
-    private Vector3 velocity = new Vector3();
-	
+    [SerializeField]
+    private Vector3 velocity = new Vector3();                   public Vector3 GetVelocity() { return velocity; }
+
+    public bool commitStartingVelocity;
+    public Vector3 startVelocity;
+
+    // Override starting velocity
+    void Awake()
+    {
+        if (commitStartingVelocity)
+        {
+            velocity = startVelocity;
+        }
+    }
+
 	// Update
 	void FixedUpdate()
     {
@@ -97,5 +110,11 @@ public class EnemyMovement : MonoBehaviour
     public void SetHspeed(float hsp)
     {
         velocity.x = hsp;
+    }
+
+    // Resets velocity
+    public void ResetVelocity()
+    {
+        velocity = Vector3.zero;
     }
 }
