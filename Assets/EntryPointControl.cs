@@ -35,4 +35,10 @@ public class EntryPointControl : MonoBehaviour
         // Load level
         Application.LoadLevel(sceneName);
     }
+
+    public static void ChangeScenes(int sceneNum)
+    {
+        // Load level
+        Application.LoadLevel(sceneNum);
+    }
 }
